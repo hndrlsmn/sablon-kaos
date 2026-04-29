@@ -66,16 +66,3 @@ window.addEventListener('scroll', () => {
         header.style.background = 'rgba(255, 255, 255, 0.95)';
     }
 });
-
-document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const nama = document.getElementById('nama').value;
-    const pesanan = document.getElementById('pesanan').value;
-    const nomorAdmin = "6281293108522"; 
-
-    // Pesan yang lebih to-the-point
-    const teks = `Halo Admin SablonKaos.id, saya *${nama}* mau pesan:%0A%0A${pesanan}`;
-
-    window.open(`https://wa.me/${nomorAdmin}?text=${teks}`, '_blank');
-});
