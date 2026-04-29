@@ -68,23 +68,14 @@ window.addEventListener('scroll', () => {
 });
 
 document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Mencegah halaman reload
+    e.preventDefault();
 
-    // Ambil data dari inputan
     const nama = document.getElementById('nama').value;
-    const whatsappUser = document.getElementById('whatsapp').value;
     const pesanan = document.getElementById('pesanan').value;
-    const nomorAdmin = "6281293108522"; // Format harus 62 (Tanpa + atau 0)
+    const nomorAdmin = "6281293108522"; 
 
-    // Susun pesan
-    const pesan = `Halo SablonKaos.id, saya ingin pesan kaos:%0A%0A` +
-                  `*Nama:* ${nama}%0A` +
-                  `*No. WA:* ${whatsappUser}%0A` +
-                  `*Deskripsi Pesanan:* ${pesanan}`;
+    // Pesan yang lebih to-the-point
+    const teks = `Halo Admin SablonKaos.id, saya *${nama}* mau pesan:%0A%0A${pesanan}`;
 
-    // Buat URL WhatsApp
-    const urlWA = `https://api.whatsapp.com/send?phone=${nomorAdmin}&text=${pesan}`;
-
-    // Buka WhatsApp di tab baru
-    window.open(urlWA, '_blank');
+    window.open(`https://wa.me/${nomorAdmin}?text=${teks}`, '_blank');
 });
